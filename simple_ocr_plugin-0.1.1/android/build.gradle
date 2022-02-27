@@ -1,0 +1,39 @@
+group 'io.que.simple_ocr_plugin'
+version '1.0'
+
+buildscript {
+    repositories {
+        google()
+        jcenter()
+    }
+
+    dependencies {
+        classpath 'com.android.tools.build:gradle:3.5.0'
+    }
+}
+
+rootProject.allprojects {
+    repositories {
+        google()
+        jcenter()
+    }
+}
+
+apply plugin: 'com.android.library'
+
+android {
+    compileSdkVersion 28
+
+    defaultConfig {
+        minSdkVersion 16
+    }
+    lintOptions {
+        disable 'InvalidPackage'
+    }
+}
+
+// [DOC]
+dependencies {
+    // from remote library (simply import lib / jar from 3rd party)
+    implementation 'com.google.android.gms:play-services-mlkit-text-recognition:16.1.0'
+}
